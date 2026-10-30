@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tabletop-planner"
+version = "0.1.0"
+description = "Train and evaluate a language planner for a simulated tabletop robot"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+sim = ["pybullet==3.2.7", "numpy>=1.24,<3", "Pillow>=10,<13"]
+train = ["torch>=2.2,<3", "transformers==4.51.3", "peft==0.15.2", "accelerate==1.6.0"]
+
+[project.scripts]
+tabletop = "tabletop_planner.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tabletop_planner*"]
+
+[tool.setuptools.package-data]
+tabletop_planner = ["system_prompt.txt", "system_prompt_legacy.txt"]

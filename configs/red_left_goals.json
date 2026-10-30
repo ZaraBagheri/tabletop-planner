@@ -1,0 +1,9 @@
+{
+  "expected": "done",
+  "goals": [
+    {
+      "color": "red",
+      "zone": "left_tray"
+    }
+  ]
+}
